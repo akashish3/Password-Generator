@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password  Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <p>Password Generator</p>
+            <div class="input">
+                <input type="text" id="name" placeholder="Enter your name"><br><br>
+                <input type="text" id="lastname" placeholder="Enter your lastname"><br><br>
+                <input type="number" id="number" placeholder="Enter your  number"><br><br>
+            </div>
+        <input type="text" id="password"><br><br>
+        <button onclick="pass()">Generator Password </button>
+        </div>
+    </div>
+
+    <script>
+        const password = document.getElementById("password");
+
+        function pass(){
+            let name = document.getElementById("name").value;
+            let lastname = document.getElementById("lastname").value;
+            let number = document.getElementById("number").value;
+            let symbol="!@#$%^&*";
+            let pass ="";
+            pass +=name[Math.floor(Math.random()*name.length)];
+            pass +=name[Math.floor(Math.random()*name.length)];
+            pass +=name[Math.floor(Math.random()*name.length)];
+            pass +=name[Math.floor(Math.random()*name.length)];
+
+            pass +=lastname[Math.floor(Math.random()*lastname.length)];
+            pass +=lastname[Math.floor(Math.random()*lastname.length)];
+
+            pass +=symbol[Math.floor(Math.random()*symbol.length)];
+
+            pass +=number[Math.floor(Math.random()*number.length)];
+            pass +=number[Math.floor(Math.random()*number.length)];
+            pass +=number[Math.floor(Math.random()*number.length)];
+            pass +=number[Math.floor(Math.random()*number.length)];
+            pass +=number[Math.floor(Math.random()*number.length)];
+
+            password.value = pass;
+        }
+    </script>
+    
+</body>
+</html>
