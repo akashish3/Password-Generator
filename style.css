@@ -5,17 +5,30 @@ html,body{
     height: 100%;
 }
 .container{
-width: 100%;
+background-color: #1a1a1a;
 height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: #f5f5f5;
+padding: 20px;
+
 }
 .container .box{
-padding: 100px 120px;
-border: solid 1px black;
-background-color: #fff;
-border-radius: 20px;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+display: flex;
+align-items: center;
+flex-direction: column;
+width: 200 px;
+padding: 50 px;
+border: solid 1 px #fff;
+background-color: #605a5a;
+border-radius: 20 px;
+box-shadow: 0 0 10 px rgba(0,0,0,0.1);
 }
+input{
+    color: azure;
+    height:30px;
+}
+
+
+
+
