@@ -29,21 +29,27 @@
             let number = document.getElementById("number").value;
             let symbol="!@#$%^&*";
             let pass ="";
-            pass +=name[Math.floor(Math.random()*name.length)];
-            pass +=name[Math.floor(Math.random()*name.length)];
-            pass +=name[Math.floor(Math.random()*name.length)];
-            pass +=name[Math.floor(Math.random()*name.length)];
+             //Validate the input values
+         if (isNaN(name) || isNaN(lastname) || isNaN(number) || isNAN(symbol)) {
+                alert('Please fill all the values of this field');
+                return;
+            }
+             for(let i=1;i<=12;i++){
+                if(i>=1 && i<5){
+                    pass +=name[Math.floor(Math.random()*name.length)];
+                }
+                 if(i>=5 && i<7){
+                    pass +=lastname[Math.floor(Math.random()*lastname.length)];
+                 }
+                 if(i==7){
+                    pass +=symbol[Math.floor(Math.random()*symbol.length)];
+                 }
+                 if(i>7 && i<=12){
+                    pass +=number[Math.floor(Math.random()*number.length)];
+                 } 
 
-            pass +=lastname[Math.floor(Math.random()*lastname.length)];
-            pass +=lastname[Math.floor(Math.random()*lastname.length)];
-
-            pass +=symbol[Math.floor(Math.random()*symbol.length)];
-
-            pass +=number[Math.floor(Math.random()*number.length)];
-            pass +=number[Math.floor(Math.random()*number.length)];
-            pass +=number[Math.floor(Math.random()*number.length)];
-            pass +=number[Math.floor(Math.random()*number.length)];
-            pass +=number[Math.floor(Math.random()*number.length)];
+            }
+            
 
             password.value = pass;
         }
