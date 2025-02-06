@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password  Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <p>Password Generator</p>
+            <div class="input">
+                <input type="text" id="name" placeholder="Enter your name"><br><br>
+                <input type="text" id="lastname" placeholder="Enter your lastname"><br><br>
+                <input type="number" id="number" placeholder="Enter your  number"><br><br>
+            </div>
+        <input type="text" id="password" ><br><br>
+        <button onclick="pass()">Generator Password </button>
+        </div>
+    </div>
+
+    <script>
+        const password = document.getElementById("password");
+
+        function pass(){
+            let name = document.getElementById("name").value;
+            let lastname = document.getElementById("lastname").value;
+            let number = document.getElementById("number").value;
+            let symbol="!@#$%^&*";
+            let pass ="";
+
+           // Validate the input values
+           if (name === "" || lastname === "" || number === "") {
+                alert('Please fill all the values of this field');
+                return;
+            }
+            
+            for(let i=1;i<=12;i++){
+                if(i>=1 && i<5){
+                    pass +=name[Math.floor(Math.random()*name.length)];
+                }
+                 if(i>=5 && i<7){
+                    pass +=lastname[Math.floor(Math.random()*lastname.length)];
+                 }
+                 if(i==7){
+                    pass +=symbol[Math.floor(Math.random()*symbol.length)];
+                 }
+                 if(i>7 && i<=12){
+                    pass +=number[Math.floor(Math.random()*number.length)];
+                 } 
+
+            }
+            password.value = pass;
+        }
+    </script>
+    
+</body>
+</html>
